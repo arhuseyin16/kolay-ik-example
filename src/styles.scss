@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+/*You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.css';
+.card {
+    background: #FFFFFF !important;
+    border: 1px solid rgba(22, 42, 76, 0.15) !important;
+    border-radius: 4px !important;
+}
+
+label {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: rgba(22, 42, 76, 0.9);
+}
+
+input, select {
+  width: 100%;
+  height: 45px;
+  padding: 12px;
+  border-radius: 4px 4px 0px 0px;
+  border: none;
+  border-bottom: solid 0.5px #979797;
+  background-color: #F0F2F5;
+}

@@ -1,0 +1,17 @@
+<div class="header">
+  <p *ngIf="title.path === '/dashboard'">{{'Home'}}</p>
+  <p *ngIf="title.path === '/employees'">{{'Employees'}}</p>
+  <div *ngIf="!['/dashboard', '/employees'].includes(title.path)">
+  <div class="d-flex" *ngIf="title.id">
+    <div class="header-icon">
+      <i class="pi pi-arrow-left"  (click)="goBack()"></i>
+    </div>
+    <div class="avatar-icon" [style.background-color]="title.color">
+    {{ getAvatar(title.name, title.surname)}}
+    </div>
+    <div class="name">
+      {{title.name + ' ' + title.surname}}
+    </div>
+  </div>
+  </div>
+</div>

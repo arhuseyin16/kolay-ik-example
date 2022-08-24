@@ -1,0 +1,27 @@
+.card {
+  width: 360px;
+  .card-header {
+    background: transparent;
+    border: none;
+    .chart-title {
+      i {
+        margin-right: 7px;
+      }
+    }
+
+    .chart-action {
+      i {
+        margin-right: 10px;
+        color: #376BFB;
+        cursor: pointer;
+      }
+    }
+  }
+
+  p {
+    margin-bottom: 2px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+}

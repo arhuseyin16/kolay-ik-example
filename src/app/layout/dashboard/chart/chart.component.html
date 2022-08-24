@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-header d-flex justify-content-between">
+    <div class="chart-title d-flex align-items-center">
+      <i class="pi pi-chart-bar"></i> Employee Distribution
+    </div>
+    <div class="chart-action d-flex align-items-center">
+      <i class="pi pi-refresh" (click)="refresh()"></i>
+      <i class="pi pi-ellipsis-v"></i>
+    </div>
+  </div>
+  <div class="card-body">
+    <p-chart type="doughnut" [data]="doughnutData"></p-chart>
+  </div>
+</div>

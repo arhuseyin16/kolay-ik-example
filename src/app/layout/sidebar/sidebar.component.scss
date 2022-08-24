@@ -1,0 +1,34 @@
+::ng-deep .ant-layout-sider {
+  background-color: #F0F2F5;
+  border-right: 1px solid rgba(22, 42, 76, 0.15);
+}
+
+.logo {
+  height: 72px;
+  padding: 20px 16px 6px;
+  width: 100%;
+  border-bottom: 1px solid rgba(22, 42, 76, 0.15);
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+ul {
+  background-color: #F0F2F5;
+  padding: 0 10px;
+}
+
+::ng-deep .ant-menu-inline.ant-menu-root .ant-menu-item {
+  padding: 0 0 0 5px !important;
+  border-radius: 4px;
+}
+
+::ng-deep .ant-menu-light .ant-menu-item-active,
+::ng-deep .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected,
+::ng-deep .ant-menu-light .ant-menu-item:hover {
+  background-color: #E1E5FE;
+}

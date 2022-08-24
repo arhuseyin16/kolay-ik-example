@@ -1,0 +1,28 @@
+<div class="col-3">
+  <div class="search">
+    <input type="text" autocomplete="off" placeholder="First Name Search"
+           [(ngModel)]="search" />
+    <img src="./assets/image/search-input.png">
+  </div>
+</div>
+<div class="col-12 mt-5">
+    <div class="row" >
+      <div class="col-lg-2 col-md-4 col-sm-6 col-12 mt-4" *ngFor="let item of employees | search: 'firstName': search">
+        <div class="card" (click)="employeesDetail(item.id)">
+          <div class="card-body">
+            <div class="avatar">
+              <div class="avatar-icon" [style.background-color]="item.color">
+                {{getAvatar(item.firstName, item.lastName)}}
+              </div>
+            </div>
+            <div class="other-info">
+              <p>{{item.firstName + ' ' + item.lastName}}</p>
+              <p>{{item.position}}</p>
+              <p title="{{item.email}}">{{item.email}}</p>
+              <p>{{item.phone}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+   </div>
+</div>

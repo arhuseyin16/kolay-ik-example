@@ -1,0 +1,14 @@
+<nz-layout>
+  <nz-sider>
+    <app-sidebar></app-sidebar>
+  </nz-sider>
+  <nz-layout>
+    <app-header [title]="title"></app-header>
+    <nz-content>
+      <div class="inner-content">
+        <router-outlet (activate)="setHeader()"></router-outlet>
+      </div>
+    </nz-content>
+  </nz-layout>
+</nz-layout>
+

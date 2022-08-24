@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="col-12">
+    <form [formGroup]="currentForm">
+      <div class="row">
+        <div class="col-6 mt-4">
+          <label class="form-label">First Name</label>
+          <input type="text" formControlName="firstName" placeholder="">
+        </div>
+        <div class="col-6 mt-4">
+          <label class="form-label">Last Name</label>
+          <input type="text" formControlName="lastName" placeholder="">
+        </div>
+        <div class="col-6 mt-4">
+          <label class="form-label">Email</label>
+          <input type="text" formControlName="email" placeholder="">
+        </div>
+        <div class="col-6 mt-4">
+          <label class="form-label">Start Date</label>
+          <input type="text" formControlName="startDate" placeholder="">
+        </div>
+        <div class="col-6 mt-4">
+          <label class="form-label">Department</label>
+          <select formControlName="departmentId">
+            <option *ngFor="let item of department" value="{{ item.id }}">{{item.name}}</option>
+          </select>
+        </div>
+        <div class="col-6 mt-4">
+          <label class="form-label">Location</label>
+          <select formControlName="locationId">
+            <option *ngFor="let item of locations" value="{{ item.id }}">{{item.name}}</option>
+          </select>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
