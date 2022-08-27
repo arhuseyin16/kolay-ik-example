@@ -142,5 +142,17 @@
     "departmentId": 2,
     "startDate": "2013/09/08",
     "color": "#68DECA"
+  },
+  {
+    "id": 234534,
+    "firstName": "Hüseyin",
+    "lastName": "Ar",
+    "email": "arhuseyin16@gmail.com",
+    "phone": "545 376 23 84",
+    "position": "Product Manager",
+    "locationId": 1,
+    "departmentId": 2,
+    "startDate": "2013/09/08",
+    "color": "#68DECA"
   }
 ]
