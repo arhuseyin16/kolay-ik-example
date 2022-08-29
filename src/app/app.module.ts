@@ -6,6 +6,8 @@ import {RouterModule} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
 import {HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {AuthService} from "./service/auth.service";
+import {ToastrModule} from "ngx-toastr";
 
 @NgModule({
   declarations: [
@@ -15,10 +17,11 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
         BrowserModule,
         HttpClientModule,
         BrowserAnimationsModule,
+        ToastrModule.forRoot(),
         RouterModule,
         AppRoutingModule
     ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

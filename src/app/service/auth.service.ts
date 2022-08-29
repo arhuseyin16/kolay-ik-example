@@ -1,0 +1,39 @@
+import { Injectable } from '@angular/core';
+import {Router} from "@angular/router";
+import {ToastrService} from "ngx-toastr";
+
+@Injectable()
+export class AuthService {
+  private readonly AccessToken = 'token';
+  private readonly AccessUsers = 'users';
+
+  constructor(private router: Router, private toastr: ToastrService) { }
+
+  setAuthFromLocalStorage(auth: any): boolean {
+    // store auth accessToken/refreshToken/epiresIn in local storage to keep user logged in between page refreshes
+    if (auth && auth.token) {
+      localStorage.setItem(this.AccessToken, auth.token);
+      localStorage.setItem(this.AccessUsers, JSON.stringify(auth.users));
+      this.router.navigate(['/dashboard']);
+      return true;
+    }
+    return false;
+  }
+
+  logout() {
+    localStorage.removeItem(this.AccessToken);
+    localStorage.removeItem(this.AccessUsers);
+    this.router.navigate(['/login']);
+  }
+
+  isTokenAndUsers(): boolean {
+    if (localStorage.getItem(this.AccessToken) && localStorage.getItem(this.AccessUsers)) {
+      return true;
+    } else {
+      this.toastr.warning('Lütfen Giriş Yapınız!');
+      this.logout();
+    }
+    return true;
+  }
+
+}

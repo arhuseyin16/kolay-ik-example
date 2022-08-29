@@ -9,6 +9,9 @@
     <li nz-menu-item [routerLink]="['employees']">
       <i class="pi pi-users p-2"></i> <span>Employees</span>
     </li>
+    <li nz-menu-item (click)="logout()">
+      <i class="pi pi-arrow-left p-2"></i> <span>Logout</span>
+    </li>
   </ul>
 </div>
 

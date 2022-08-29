@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="login-page card">
+    <div class="card-title">
+      KOLAY İK HOŞGELDİNİZ
+    </div>
+    <div class="card-body">
+      <div class="login">
+        <div class="login-img">
+          <img src="./assets/image/logo.png">
+        </div>
+        <div class="login-form">
+          <div class="form">
+            <label class="form-label">Giriş</label>
+            <select [(ngModel)]="selectedRole">
+              <option>--</option>
+              <option *ngFor="let item of role" value="{{ item.id }}">{{item.name}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="button-action">
+        <button (click)="submit()">Devam Et</button>
+      </div>
+    </div>
+  </div>
+</div>
