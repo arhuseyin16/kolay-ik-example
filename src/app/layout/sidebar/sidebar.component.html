@@ -3,13 +3,12 @@
     <img src="assets/image/logo.png">
   </div>
   <ul nz-menu nzMode="inline">
-    <li nz-menu-item  [routerLink]="['dashboard']">
-      <i class="pi pi-home p-2"></i> <span>Home</span>
-    </li>
-    <li nz-menu-item [routerLink]="['employees']">
-      <i class="pi pi-users p-2"></i> <span>Employees</span>
-    </li>
-    <li nz-menu-item (click)="logout()">
+    <div *ngFor="let item of menuConfig.items">
+      <li nz-menu-item  [routerLink]="[item.url]" *ngIf="getRoleController(item.data)">
+        <i class="p-2" [ngClass]="item.icon"></i> <span>{{item.title}}</span>
+      </li>
+    </div>
+    <li nz-menu-item class="logout-item" (click)="logout()">
       <i class="pi pi-arrow-left p-2"></i> <span>Logout</span>
     </li>
   </ul>

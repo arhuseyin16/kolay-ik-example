@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../../service/auth.service";
+import {DynamicMenuService} from "../../service/dynamic-menu.service";
 
 @Component({
   selector: 'app-sidebar',
@@ -8,9 +9,25 @@ import {AuthService} from "../../service/auth.service";
 })
 export class SidebarComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  menuConfig: any;
+  users =  JSON.parse(localStorage.getItem('users') as any);
+
+
+  constructor(
+    private authService: AuthService,
+    private menu: DynamicMenuService
+  ) {
+
+    this.menu.menuConfig$?.subscribe(res => {
+      this.menuConfig = res;
+    });
+  }
 
   ngOnInit(): void {
+  }
+
+  getRoleController(data: Array<any>): boolean {
+    return data.includes(this.users?.role);
   }
 
   logout() {

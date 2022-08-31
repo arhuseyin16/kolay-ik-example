@@ -20,6 +20,12 @@
 ul {
   background-color: #F0F2F5;
   padding: 0 10px;
+
+  li.logout-item {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
 }
 
 ::ng-deep .ant-menu-inline.ant-menu-root .ant-menu-item {

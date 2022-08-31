@@ -9,6 +9,7 @@ import {NzMenuModule} from "ng-zorro-antd/menu";
 import {NzIconModule} from "ng-zorro-antd/icon";
 import {DataService} from "../service/data.service";
 import {AuthService} from "../service/auth.service";
+import {AuthRouteGuard} from "../auth/auth-route-guard";
 
 @NgModule({
   declarations: [
@@ -27,6 +28,6 @@ import {AuthService} from "../service/auth.service";
     SidebarComponent,
     HeaderComponent
   ],
-  providers: [DataService, AuthService]
+  providers: [DataService, AuthService, AuthRouteGuard]
 })
 export class LayoutModule { }

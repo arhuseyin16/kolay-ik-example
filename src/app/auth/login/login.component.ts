@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
 
   submit() {
     if (!this.selectedRole || this.selectedRole === '--') {
-      this.toastr.warning('Seçim Yapınız!');
+      this.toastr.warning('Seçim Yapınız!', 'UYARI');
       return;
     }
     const data = {

@@ -10,7 +10,6 @@ export class AuthService {
   constructor(private router: Router, private toastr: ToastrService) { }
 
   setAuthFromLocalStorage(auth: any): boolean {
-    // store auth accessToken/refreshToken/epiresIn in local storage to keep user logged in between page refreshes
     if (auth && auth.token) {
       localStorage.setItem(this.AccessToken, auth.token);
       localStorage.setItem(this.AccessUsers, JSON.stringify(auth.users));
@@ -30,9 +29,14 @@ export class AuthService {
     if (localStorage.getItem(this.AccessToken) && localStorage.getItem(this.AccessUsers)) {
       return true;
     } else {
-      this.toastr.warning('Lütfen Giriş Yapınız!');
+      this.toastr.warning('Lütfen Giriş Yapınız!', 'UYARI');
       this.logout();
     }
+    return true;
+  }
+
+  isRole(): boolean {
+
     return true;
   }
 

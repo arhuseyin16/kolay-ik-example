@@ -1,6 +1,8 @@
 import {RouterModule, Routes} from "@angular/router";
 import {NgModule} from "@angular/core";
 import {LayoutComponent} from "./layout.component";
+import {AuthGuard} from "../auth/auth-guard";
+import {AuthRouteGuard} from "../auth/auth-route-guard";
 
 const routes: Routes = [
   {
@@ -9,11 +11,19 @@ const routes: Routes = [
     children: [
       {
         path: 'dashboard',
-        loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
+        loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule),
+        canActivate: [AuthGuard, AuthRouteGuard],
+        data: {
+          authorities: ['admin', 'employee', 'other']
+        }
       },
       {
         path: 'employees',
-        loadChildren: () => import('./employees/employees.module').then(m => m.EmployeesModule)
+        loadChildren: () => import('./employees/employees.module').then(m => m.EmployeesModule),
+        canActivate: [AuthGuard, AuthRouteGuard],
+        data: {
+          authorities: ['admin', 'employee']
+        }
       },
       {
         path: '',
