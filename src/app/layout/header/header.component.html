@@ -1,7 +1,8 @@
 <div class="header">
   <p *ngIf="title.path === '/dashboard'">{{'Home'}}</p>
   <p *ngIf="title.path === '/employees'">{{'Employees'}}</p>
-  <div *ngIf="!['/dashboard', '/employees'].includes(title.path)">
+  <p *ngIf="title.path === '/permission'">{{'Permission'}}</p>
+  <div *ngIf="!['/dashboard', '/employees', '/permission'].includes(title.path)">
   <div class="d-flex" *ngIf="title.id">
     <div class="header-icon">
       <i class="pi pi-arrow-left"  (click)="goBack()"></i>

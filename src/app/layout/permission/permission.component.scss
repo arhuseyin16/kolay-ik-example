@@ -1,0 +1,42 @@
+.container {
+  .card {
+    border: 2px solid green !important;
+    .card-title {
+      .permission-title {
+        margin: 0 20px;
+        font-size: 20px;
+        padding-top: 10px;
+        font-weight: bold;
+        color: blueviolet;
+      }
+    }
+    .card-body {
+      textarea {
+        height: 150px;
+      }
+    }
+    .card-footer {
+      background-color: white;
+      .cancel {
+        font-size: 20px;
+        margin: 0 10px;
+        border: 2px solid #e11818;
+        background: #e11818;
+        color: white;
+        width: 100px;
+        padding: 10px;
+        border-radius: 10px;
+      }
+
+      .save {
+        width: 200px;
+        background: #42e442;
+        border: 2px solid #42e442;
+        padding: 10px;
+        color: white;
+        font-size: 20px;
+        border-radius: 10px;
+      }
+    }
+  }
+}

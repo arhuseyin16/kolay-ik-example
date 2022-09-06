@@ -11,6 +11,12 @@ export const DynamicMenu = {
       data: ['admin', 'employee'],
       url: '/employees',
       icon: 'pi pi-users'
+    },
+    {
+      title: 'Permission',
+      data: ['admin', 'other'],
+      url: '/permission',
+      icon: 'pi pi-sitemap'
     }
   ]
 }

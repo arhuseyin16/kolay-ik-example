@@ -18,7 +18,7 @@ export class AuthRouteGuard implements CanActivate {
     if (usersRole) {
      this.authRole = authorities.includes(usersRole.role);
       if (!this.authRole) {
-        this.toastr.error(`${usersRole.role.toUpperCase()} yetkisi ile bu sayfaya giriş yapamazsınız!`, 'YETKİ HATASI');
+        this.toastr.error(`${usersRole?.role?.toUpperCase()} yetkisi ile bu sayfaya giriş yapamazsınız!`, 'YETKİ HATASI');
         this.router.navigate(['dashboard']);
         return false;
       }

@@ -15,7 +15,7 @@ import {AuthRouteGuard} from "../auth/auth-route-guard";
   declarations: [
     SidebarComponent,
     HeaderComponent,
-    LayoutComponent,
+    LayoutComponent
   ],
   imports: [
     CommonModule,

@@ -26,6 +26,14 @@ const routes: Routes = [
         }
       },
       {
+        path: 'permission',
+        loadChildren: () => import('./permission/permission.module').then(m => m.PermissionModule),
+        canActivate: [AuthGuard, AuthRouteGuard],
+        data: {
+          authorities: ['admin', 'other']
+        }
+      },
+      {
         path: '',
         redirectTo: '/dashboard',
         pathMatch: 'full',

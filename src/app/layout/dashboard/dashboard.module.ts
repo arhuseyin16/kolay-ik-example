@@ -7,6 +7,7 @@ import {ChartModule} from "primeng/chart";
 import { ChartComponent } from './chart/chart.component';
 import { SpecialDayComponent } from './special-day/special-day.component';
 import {DragDropModule} from "@angular/cdk/drag-drop";
+import { PermissionDetailComponent } from './permission-detail/permission-detail.component';
 
 const routes: Routes = [
   {
@@ -26,7 +27,7 @@ const routes: Routes = [
     DragDropModule,
   ],
   exports: [],
-  declarations: [DashboardComponent, ChartComponent, SpecialDayComponent],
+  declarations: [DashboardComponent, ChartComponent, SpecialDayComponent, PermissionDetailComponent],
   providers: [DataService]
 })
 
